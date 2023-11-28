@@ -1,0 +1,22 @@
+TC  - total cost             общие издержки
+FC  - fixed cost             постоянные издержки
+VC  - variaable cost         переменные издержки
+Q   - quantity               колличество
+P   - price                  цена
+MC  - margin costs           дополнительные издержки
+
+AFC - Average fixed costs    cредние постоянные затраты
+AVC - Average variable costs cредние переменные затраты
+ATC - Average total costs    средние общие затраты (себестоимость)
+
+TR  - total revenue          общая выручка
+AR  - average revenue        средняя выручка
+MR  - margin revenue         дополнительная выручка
+
+Pr  - prifit                 прибыль
+Qcr - critical quantity      критическое количество
+
+
+TC = Vc + Fc = AFc * Q + AVc * Q
+TR - ((P - ATc) * Q)
+TR - PR

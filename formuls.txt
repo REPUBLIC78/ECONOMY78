@@ -1,6 +1,6 @@
-TC  - total cost             общие издержки
-FC  - fixed cost             постоянные издержки
-VC  - variaable cost         переменные издержки
+TC  - total cost             общие издержки +
+FC  - fixed cost             постоянные издержки +
+VC  - variable cost         переменные издержки +
 Q   - quantity               колличество
 P   - price                  цена
 
@@ -14,7 +14,7 @@ AR  - average revenue        средняя выручка на товар
 MC  - margin costs           дополнительные издержки
 MR  - margin revenue         дополнительная выручка
 
-Pr  - prifit                 прибыль
+Pr  - profit                 прибыль
 Qcr - critical quantity      критическое количество
 
 
@@ -22,7 +22,16 @@ TC = VC + FC
 TC = AFC * Q + AVC * Q
 TC = TR - ((P - ATC) * Q)
 TC = TR - Pr
-TC = FC; Q = 0;
+TC = ATC * Q
+
+FC = TC - VC
+FC = (AFC * Q + AVC * Q) - VC
+FC = AFC * Q
+FC = Qcr * (P - AVC)
+
+VC = TC - FC
+VC = AVC * Q
+VC = (AFC * Q + AVC * Q) - FC
 
 ATC = AFC + AVC
 ATC = TC / Q
@@ -40,4 +49,3 @@ Pr = TR - TC
 Pr = (P - ATC) * Q
 
 Qcr = FC/(P - AVC)
-

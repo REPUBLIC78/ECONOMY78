@@ -39,56 +39,62 @@ def CliCked():
 window = Tk()
 window.title('Рассчёт TC')
 window.geometry('640x360')
+window.minsize(500,300)
+window.maxsize(640,360)
 
-VClbl = Label(window, text='VC', font=('Arial Bold', 16))
+
+VClbl = Label(window, text='VC', font=('Arial Bold', 14))
 VClbl.grid(column=0, row=0)
 VCtxt = Entry(window, width=6)
 VCtxt.grid(column=0, row=1)
 
-FClbl = Label(window, text='FC', font=('Arial Bold', 16))
+FClbl = Label(window, text='FC', font=('Arial Bold', 14))
 FClbl.grid(column=1, row=0)
 FCtxt = Entry(window, width=6)
 FCtxt.grid(column=1, row=1)
 
-AFClbl = Label(window, text='AFC', font=('Arial Bold', 16))
+AFClbl = Label(window, text='AFC', font=('Arial Bold', 14))
 AFClbl.grid(column=2, row=0)
 AFCtxt = Entry(window, width=6)
 AFCtxt.grid(column=2, row=1)
 
-AVClbl = Label(window, text='AVC', font=('Arial Bold', 16))
+AVClbl = Label(window, text='AVC', font=('Arial Bold', 14))
 AVClbl.grid(column=3, row=0)
 AVCtxt = Entry(window, width=6)
 AVCtxt.grid(column=3, row=1)
 
-Qlbl = Label(window, text='Q', font=('Arial Bold', 16))
+Qlbl = Label(window, text='Q', font=('Arial Bold', 14))
 Qlbl.grid(column=4, row=0)
 Qtxt = Entry(window, width=6)
 Qtxt.grid(column=4, row=1)
 
-Plbl = Label(window, text='P', font=('Arial Bold', 16))
+Plbl = Label(window, text='P', font=('Arial Bold', 14))
 Plbl.grid(column=5, row=0)
 Ptxt = Entry(window, width=6)
 Ptxt.grid(column=5, row=1)
 
-ATClbl = Label(window, text='ATC', font=('Arial Bold', 16))
+ATClbl = Label(window, text='ATC', font=('Arial Bold', 14))
 ATClbl.grid(column=6, row=0)
 ATCtxt = Entry(window, width=6)
 ATCtxt.grid(column=6, row=1)
 
-TRlbl = Label(window, text='TR', font=('Arial Bold', 16))
+TRlbl = Label(window, text='TR', font=('Arial Bold', 14))
 TRlbl.grid(column=7, row=0)
 TRtxt = Entry(window, width=6)
 TRtxt.grid(column=7, row=1)
 
-PRlbl = Label(window, text='PR', font=('Arial Bold', 16))
+PRlbl = Label(window, text='PR', font=('Arial Bold', 14))
 PRlbl.grid(column=8, row=0)
 PRtxt = Entry(window, width=6)
 PRtxt.grid(column=8, row=1)
 
 btn = Button(window, text='Рассчитать TC', command=CliCked)
-btn.grid(column=5, row=2)
+btn.grid(column=4, row=2)
 
-ANSlbl = Label(window, text='TC = ', font=('Arial Bold', 16))
-ANSlbl.grid(column=5, row=3)
+ANSlbl = Label(window, text='TC = ', font=('Arial Bold', 14))
+ANSlbl.grid(column=4, row=3)
+
+for c in range(9): window.columnconfigure(index=c, weight=1)
+for r in range(3): window.rowconfigure(index=r, weight=1)
 
 window.mainloop()

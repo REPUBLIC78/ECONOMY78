@@ -1,9 +1,3 @@
-#Формулы
-# TC = VC + FC
-#    = AFC * Q + AVC * Q
-#    = TR - ((P - ATC) * Q)
-#    = TR - PR
-
 TC = None
 VC = 20
 FC = 40
@@ -14,6 +8,8 @@ P = None
 ATC = None
 TR = None
 PR = None
+AR = None
+QCR = None
 
 def fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR):
     if TC != None:

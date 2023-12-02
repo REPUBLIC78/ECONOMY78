@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from economy import fTC
 
+TC = None
 VC = None
 FC = None
 AFC = None
@@ -11,6 +12,8 @@ P = None
 ATC = None
 TR = None
 PR = None
+AR = None
+QCR = None
 
 def CliCked():
     if VCtxt.get() != '':VC = int(VCtxt.get())
@@ -88,13 +91,13 @@ PRlbl.grid(column=8, row=0)
 PRtxt = Entry(window, width=6)
 PRtxt.grid(column=8, row=1)
 
-btn = Button(window, text='Рассчитать TC', command=CliCked)
+btn = Button(window, text='Рассчитать', command=CliCked, width=8)
 btn.grid(column=4, row=2)
 
 ANSlbl = Label(window, text='TC = ', font=('Arial Bold', 14))
 ANSlbl.grid(column=4, row=3)
 
 for c in range(9): window.columnconfigure(index=c, weight=1)
-for r in range(3): window.rowconfigure(index=r, weight=1)
+for r in range(4): window.rowconfigure(index=r, weight=1)
 
 window.mainloop()

@@ -32,7 +32,7 @@ def CliCked():
     if PRtxt.get() != '':PR = int(PRtxt.get())
     else:PR = None
     if fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR) == 'Недостаточно данных':
-        ANSlbl.configure(text=fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR))
+        ANSlbl.configure(text='Н/д')
     else:
         ANSlbl.configure(text=f'TC = {fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR)}')
 

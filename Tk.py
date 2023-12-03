@@ -15,7 +15,7 @@ PR = None
 AR = None
 QCR = None
 
-def CliCked():
+def Cliсked():
     if VCtxt.get() != '':VC = int(VCtxt.get())
     else:VC = None
     if FCtxt.get() != '':FC = int(FCtxt.get())
@@ -34,10 +34,10 @@ def CliCked():
     else:TR = None
     if PRtxt.get() != '':PR = int(PRtxt.get())
     else:PR = None
-    if fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR) == 'Недостаточно данных':
+    if fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR) == 'Недостаточно данных':
         ANSlbl.configure(text='Н/д')
     else:
-        ANSlbl.configure(text=f'TC = {fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR)}')
+        ANSlbl.configure(text=f'TC = {fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR)}')
 
 window = Tk()
 window.title('Рассчёт TC')
@@ -45,6 +45,8 @@ window.geometry('640x360')
 window.minsize(500,300)
 window.maxsize(640,360)
 
+for c in range(9): window.columnconfigure(index=c, weight=1)
+for r in range(4): window.rowconfigure(index=r, weight=1)
 
 VClbl = Label(window, text='VC', font=('Arial Bold', 14))
 VClbl.grid(column=0, row=0)
@@ -91,13 +93,10 @@ PRlbl.grid(column=8, row=0)
 PRtxt = Entry(window, width=6)
 PRtxt.grid(column=8, row=1)
 
-btn = Button(window, text='Рассчитать', command=CliCked, width=8)
+btn = Button(window, text='Рассчитать', command=Cliсked, width=8)
 btn.grid(column=4, row=2)
 
 ANSlbl = Label(window, text='TC = ', font=('Arial Bold', 14))
 ANSlbl.grid(column=4, row=3)
-
-for c in range(9): window.columnconfigure(index=c, weight=1)
-for r in range(4): window.rowconfigure(index=r, weight=1)
 
 window.mainloop()

@@ -45,6 +45,8 @@ window.geometry('640x360')
 window.minsize(500,300)
 window.maxsize(640,360)
 
+for c in range(9): window.columnconfigure(index=c, weight=1)
+for r in range(4): window.rowconfigure(index=r, weight=1)
 
 VClbl = Label(window, text='VC', font=('Arial Bold', 14))
 VClbl.grid(column=0, row=0)
@@ -96,8 +98,5 @@ btn.grid(column=4, row=2)
 
 ANSlbl = Label(window, text='TC = ', font=('Arial Bold', 14))
 ANSlbl.grid(column=4, row=3)
-
-for c in range(9): window.columnconfigure(index=c, weight=1)
-for r in range(4): window.rowconfigure(index=r, weight=1)
 
 window.mainloop()

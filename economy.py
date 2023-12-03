@@ -11,7 +11,7 @@ PR = None
 AR = None
 QCR = None
 
-def fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR):
+def fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     if TC != None:
         return
     elif VC and FC != None:
@@ -25,36 +25,51 @@ def fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR):
     else:
         return 'Недостаточно данных'
 
-def fFC(FC, TC, VC, AFC, Q, AVC, QCR, P):
+def fFC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     if FC != None:
         return
+    elif TC and VC != 0:
+        return TC - VC
+    elif (AFC and Q and AVC and VC) != 0:
+        return (AFC * Q + AVC * Q) - VC
+    elif AFC and Q != 0:
+        return AFC * Q
+    elif (QCR and P and AVC) != 0:
+        return QCR * (P - AVC)
+    
+def fVC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
+    if VC != 0:
+        return
+    elif TC and FC != 0:
+        return TC - FC
+    elif AVC and Q != 0:
+        return AVC * Q
+    elif (AFC and Q and AVC and FC) != 0:
+        return (AFC * Q + AVC * Q) - FC
 
-def fVC():
+def fAFC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fAFC():
+def fAVC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fAVC():
+def fQ(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fQ():
+def fP(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fP():
+def fATC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fATC():
+def fTR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fTR():
+def fPR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fPR():
+def fAR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
-def fAR():
-    pass
-
-def fQCR():
+def fQCR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass

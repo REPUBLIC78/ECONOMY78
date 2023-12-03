@@ -54,7 +54,8 @@ def fAVC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass
 
 def fQ(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+    if Q != 0:
+        return
 
 def fP(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass

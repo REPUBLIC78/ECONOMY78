@@ -1,6 +1,6 @@
 TC = None
-VC = 20
-FC = 40
+VC = None
+FC = None
 AFC = None
 AVC = None
 Q = None
@@ -11,7 +11,7 @@ PR = None
 AR = None
 QCR = None
 
-def fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR):
+def fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR):
     if TC != None:
         return
     elif VC and FC != None:
@@ -24,3 +24,37 @@ def fTC(VC, FC, AFC, AVC, Q, P, ATC, TR, PR):
         return TR - ((P - ATC) * Q)
     else:
         return 'Недостаточно данных'
+
+def fFC(FC, TC, VC, AFC, Q, AVC, QCR, P):
+    if FC != None:
+        return
+
+def fVC():
+    pass
+
+def fAFC():
+    pass
+
+def fAVC():
+    pass
+
+def fQ():
+    pass
+
+def fP():
+    pass
+
+def fATC():
+    pass
+
+def fTR():
+    pass
+
+def fPR():
+    pass
+
+def fAR():
+    pass
+
+def fQCR():
+    pass

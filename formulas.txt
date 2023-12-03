@@ -1,6 +1,6 @@
 TC  - total cost             общие издержки +
 FC  - fixed cost             постоянные издержки +
-VC  - variable cost         переменные издержки +
+VC  - variable cost          переменные издержки +
 Q   - quantity               колличество
 P   - price                  цена
 

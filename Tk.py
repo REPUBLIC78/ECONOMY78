@@ -17,8 +17,7 @@ vd = {
     'QCR': None
 }
 
-vl = list(vd)
-cl = []
+vl, cl = list(vd), []
 
 def Cliсked():
     if TCtxt.get() != '':vd['TC'] = int(TCtxt.get())
@@ -59,8 +58,9 @@ window.maxsize(640,360)
 for c in range(12): window.columnconfigure(index=c, weight=1)
 for r in range(4): window.rowconfigure(index=r, weight=1)
 
-for i in range(12): cl.append(Label(window, text=vl[i], font=('Arial Bold', 14)))
-for i in range(12): cl[i].grid(column=i, row=0)
+for i in range(12):
+    cl.append(Label(window, text=vl[i], font=('Arial Bold', 14)))
+    cl[i].grid(column=i, row=0)
 
 TCtxt = Entry(window, width=6)
 TCtxt.grid(column=0, row=1)

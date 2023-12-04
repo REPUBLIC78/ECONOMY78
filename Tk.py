@@ -2,7 +2,23 @@ from tkinter import *
 from tkinter import ttk
 from economy import fTC
 
-vl = ['TC', 'VC', 'FC', 'AFC', 'AVC', 'Q', 'P', 'ATC', 'TR', 'PR']
+vd = {
+    'TC': None,
+    'VC': None,
+    'FC': None,
+    'AFC': None,
+    'AVC': None,
+    'Q': None,
+    'P': None,
+    'ATC': None,
+    'TR': None,
+    'PR': None,
+    'AR': None,
+    'QCR': None
+}
+
+vl = list(vd)
+cl = []
 
 TC = None
 VC = None
@@ -18,6 +34,8 @@ AR = None
 QCR = None
 
 def Cliсked():
+    if TCtxt.get() != '':TC = int(TCtxt.get())
+    else:TC = None
     if VCtxt.get() != '':VC = int(VCtxt.get())
     else:VC = None
     if FCtxt.get() != '':FC = int(FCtxt.get())
@@ -54,65 +72,49 @@ window.maxsize(640,360)
 for c in range(9): window.columnconfigure(index=c, weight=1)
 for r in range(4): window.rowconfigure(index=r, weight=1)
 
-VClbl = Label(window, text='VC', font=('Arial Bold', 14))
-VClbl.grid(column=0, row=0)
+for i in range(12): cl.append(Label(window, text=vl[i], font=('Arial Bold', 14)))
+for i in range(12): cl[i].grid(column=i, row=0)
+
+TCtxt = Entry(window, width=6)
+TCtxt.grid(column=0, row=1)
+
 VCtxt = Entry(window, width=6)
-VCtxt.grid(column=0, row=1)
+VCtxt.grid(column=1, row=1)
 
-FClbl = Label(window, text='FC', font=('Arial Bold', 14))
-FClbl.grid(column=1, row=0)
 FCtxt = Entry(window, width=6)
-FCtxt.grid(column=1, row=1)
+FCtxt.grid(column=2, row=1)
 
-AFClbl = Label(window, text='AFC', font=('Arial Bold', 14))
-AFClbl.grid(column=2, row=0)
 AFCtxt = Entry(window, width=6)
-AFCtxt.grid(column=2, row=1)
+AFCtxt.grid(column=3, row=1)
 
-AVClbl = Label(window, text='AVC', font=('Arial Bold', 14))
-AVClbl.grid(column=3, row=0)
 AVCtxt = Entry(window, width=6)
-AVCtxt.grid(column=3, row=1)
+AVCtxt.grid(column=4, row=1)
 
-Qlbl = Label(window, text='Q', font=('Arial Bold', 14))
-Qlbl.grid(column=4, row=0)
 Qtxt = Entry(window, width=6)
-Qtxt.grid(column=4, row=1)
+Qtxt.grid(column=5, row=1)
 
-Plbl = Label(window, text='P', font=('Arial Bold', 14))
-Plbl.grid(column=5, row=0)
 Ptxt = Entry(window, width=6)
-Ptxt.grid(column=5, row=1)
+Ptxt.grid(column=6, row=1)
 
-ATClbl = Label(window, text='ATC', font=('Arial Bold', 14))
-ATClbl.grid(column=6, row=0)
 ATCtxt = Entry(window, width=6)
-ATCtxt.grid(column=6, row=1)
+ATCtxt.grid(column=7, row=1)
 
-TRlbl = Label(window, text='TR', font=('Arial Bold', 14))
-TRlbl.grid(column=7, row=0)
 TRtxt = Entry(window, width=6)
-TRtxt.grid(column=7, row=1)
+TRtxt.grid(column=8, row=1)
 
-PRlbl = Label(window, text='PR', font=('Arial Bold', 14))
-PRlbl.grid(column=8, row=0)
 PRtxt = Entry(window, width=6)
-PRtxt.grid(column=8, row=1)
+PRtxt.grid(column=9, row=1)
 
-ARlbl = Label(window, text='AR', font=('Arial Bold', 14))
-ARlbl.grid(column=9, row=0)
 ARtxt = Entry(window, width=6)
-ARtxt.grid(column=9, row=1)
+ARtxt.grid(column=10, row=1)
 
-QCRlbl = Label(window, text='QCR', font=('Arial Bold', 14))
-QCRlbl.grid(column=9, row=0)
 QCRtxt = Entry(window, width=6)
-QCRtxt.grid(column=9, row=1)
+QCRtxt.grid(column=11, row=1)
 
 btn = Button(window, text='Рассчитать', command=Cliсked, width=8)
-btn.grid(column=4, row=2)
+btn.grid(column=5, row=2)
 
 ANSlbl = Label(window, text='TC = ', font=('Arial Bold', 14))
-ANSlbl.grid(column=4, row=3)
+ANSlbl.grid(column=5, row=3)
 
 window.mainloop()

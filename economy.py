@@ -33,14 +33,14 @@ def fFC(vd):
     elif vd['TC'] and vd['VC']:
         return vd['TC'] - vd['VC']
     elif vd['AFC'] and vd['Q'] and vd['AVC'] and vd['VC']:
-        return (vd['AFC'] * vd['Q'] + vd['AVC'] * ['Q']) - vd['VC']
+        return (vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']) - vd['VC']
     elif vd['AFC'] and ['Q']:
         return vd['AFC'] * vd['Q']
     elif vd['QCR'] and vd['P'] and vd['AVC']:
         return vd['QCR'] * (vd['P'] - vd['AVC'])
     else:
         return 'Недостаточно данных'
-    
+
 def fVC(vd):
     if vd['VC'] != None:
         return vd['VC']

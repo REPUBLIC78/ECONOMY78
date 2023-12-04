@@ -14,7 +14,7 @@ vd = {
 }
 
 def fTC(vd):
-    if vd['TC']:
+    if vd['TC'] != None:
         return vd['TC']
     elif vd['VC'] and vd['FC']:
         return vd['VC'] + vd['FC']
@@ -28,8 +28,8 @@ def fTC(vd):
         return 'Недостаточно данных'
 
 def fFC(vd):
-    if vd['FC']:
-        return
+    if vd['FC'] != None:
+        return vd['FC']
     elif vd['TC'] and vd['VC']:
         return vd['TC'] - vd['VC']
     elif vd['AFC'] and vd['Q'] and vd['AVC'] and vd['VC']:
@@ -42,7 +42,7 @@ def fFC(vd):
         return 'Недостаточно данных'
     
 def fVC(vd):
-    if vd['VC']:
+    if vd['VC'] != None:
         return vd['VC']
     elif vd['TC'] and vd['FC']:
         return vd['TC'] - vd['FC']

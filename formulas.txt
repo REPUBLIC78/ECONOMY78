@@ -17,6 +17,7 @@ MR  - margin revenue         дополнительная выручка
 Pr  - profit                 прибыль
 Qcr - critical quantity      критическое количество
 
+6 / 2 = 3
 
 TC = VC + FC 
 TC = AFC * Q + AVC * Q
@@ -29,20 +30,37 @@ FC = (AFC * Q + AVC * Q) - VC
 FC = AFC * Q
 FC = Qcr * (P - AVC)
 
+GPT 
+    Q = TC / (AFC + AVC)
+    Q = (TR - TC) / (P - ATC)
+    Q = TC / ATC
+    Q = (FC + VC) / (AFC + AVC)
+    Q = FC / AFC
+    Q = VC / AVC
+    Q = TR / P
+    Q = TR / AR
+
 VC = TC - FC
 VC = AVC * Q
 VC = (AFC * Q + AVC * Q) - FC
 
 ATC = AFC + AVC
 ATC = TC / Q
-AFC = FC / Q
+
+GPT
+    AFC = FC / Q
+    AFC = (TC - AVC * Q) / Q
+    AFC = ATC - AVC
+
 AVC = VC / Q
 
 TR = P * Q
+
 AR = TR / Q
 
 MC = TC(Q) - TC(Q - 1)
 MC = (TC)'
+
 MR = TR(Q) - TR(Q - 1)
 
 Pr = TR - TC

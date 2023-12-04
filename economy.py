@@ -14,40 +14,42 @@ vd = {
 }
 
 def fTC(vd):
-    if vd['TC'] != None:
+    if vd['TC']:
         return vd['TC']
-    elif vd['VC'] and vd['FC'] != None:
+    elif vd['VC'] and vd['FC']:
         return vd['VC'] + vd['FC']
-    elif (vd['AFC'] and vd['AVC'] and vd['Q']) != None:
+    elif vd['AFC'] and vd['AVC'] and vd['Q']:
         return vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']
-    elif vd['TR'] and vd['PR'] != None:
+    elif vd['TR'] and vd['PR']:
         return vd['TR'] - vd['PR']
     elif vd['TR'] and vd['Q'] and vd['ATC'] and vd['P']:
         return vd['TR'] - ((vd['P'] - vd['ATC']) * vd['Q'])
     else:
         return 'Недостаточно данных'
 
-def fFC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    if FC != None:
+def fFC(vd):
+    if vd['FC']:
         return
-    elif TC and VC != 0:
-        return TC - VC
-    elif (AFC and Q and AVC and VC) != 0:
-        return (AFC * Q + AVC * Q) - VC
-    elif AFC and Q != 0:
-        return AFC * Q
-    elif (QCR and P and AVC) != 0:
-        return QCR * (P - AVC)
+    elif vd['TC'] and vd['VC']:
+        return vd['TC'] - vd['VC']
+    elif vd['AFC'] and vd['Q'] and vd['AVC'] and vd['VC']:
+        return (vd['AFC'] * vd['Q'] + vd['AVC'] * ['Q']) - vd['VC']
+    elif vd['AFC'] and ['Q']:
+        return vd['AFC'] * vd['Q']
+    elif vd['QCR'] and vd['P'] and vd['AVC']:
+        return vd['QCR'] * (vd['P'] - vd['AVC'])
+    else:
+        return 'Недостаточно данных'
     
-def fVC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    if VC != 0:
-        return
-    elif TC and FC != 0:
-        return TC - FC
-    elif AVC and Q != 0:
-        return AVC * Q
-    elif (AFC and Q and AVC and FC) != 0:
-        return (AFC * Q + AVC * Q) - FC
+def fVC(vd):
+    if vd['VC']:
+        return vd['VC']
+    elif vd['TC'] and vd['FC']:
+        return vd['TC'] - vd['FC']
+    elif vd['AVC'] and vd['Q']:
+        return vd['AVC'] * vd['Q']
+    elif vd['AFC'] and vd['Q'] and vd['AVC'] and vd['FC']:
+        return (vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']) - vd['FC']
 
 def fAFC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass

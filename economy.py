@@ -50,6 +50,8 @@ def fVC(vd):
         return vd['AVC'] * vd['Q']
     elif vd['AFC'] and vd['Q'] and vd['AVC'] and vd['FC']:
         return (vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']) - vd['FC']
+    else:
+        return 'Недостаточно данных'
 
 def fAFC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
     pass

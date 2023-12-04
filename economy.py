@@ -1,27 +1,29 @@
-TC = None
-VC = None
-FC = None
-AFC = None
-AVC = None
-Q = None
-P = None
-ATC = None
-TR = None
-PR = None
-AR = None
-QCR = None
+vd = {
+    'TC': None,
+    'VC': None,
+    'FC': None,
+    'AFC': None,
+    'AVC': None,
+    'Q': None,
+    'P': None,
+    'ATC': None,
+    'TR': None,
+    'PR': None,
+    'AR': None,
+    'QCR': None
+}
 
-def fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    if TC != None:
-        return
-    elif VC and FC != None:
-        return VC + FC
-    elif (AFC and AVC and Q) != None:
-        return AFC * Q + AVC * Q
-    elif TR and PR != None:
-        return TR - PR
-    elif TR and Q and ATC and P:
-        return TR - ((P - ATC) * Q)
+def fTC(vd):
+    if vd['TC'] != None:
+        return vd['TC']
+    elif vd['VC'] and vd['FC'] != None:
+        return vd['VC'] + vd['FC']
+    elif (vd['AFC'] and vd['AVC'] and vd['Q']) != None:
+        return vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']
+    elif vd['TR'] and vd['PR'] != None:
+        return vd['TR'] - vd['PR']
+    elif vd['TR'] and vd['Q'] and vd['ATC'] and vd['P']:
+        return vd['TR'] - ((vd['P'] - vd['ATC']) * vd['Q'])
     else:
         return 'Недостаточно данных'
 

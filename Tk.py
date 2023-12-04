@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from economy import fTC
 
+vl = ['TC', 'VC', 'FC', 'AFC', 'AVC', 'Q', 'P', 'ATC', 'TR', 'PR']
+
 TC = None
 VC = None
 FC = None
@@ -34,10 +36,14 @@ def Cliсked():
     else:TR = None
     if PRtxt.get() != '':PR = int(PRtxt.get())
     else:PR = None
-    if fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR) == 'Недостаточно данных':
+    if ARtxt.get() != '':AR = int(PRtxt.get())
+    else:AR = None
+    if QCRtxt.get() != '':QCR = int(PRtxt.get())
+    else:QCR = None
+    if fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR) == 'Недостаточно данных':
         ANSlbl.configure(text='Н/д')
     else:
-        ANSlbl.configure(text=f'TC = {fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR)}')
+        ANSlbl.configure(text=f'TC = {fTC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR)}')
 
 window = Tk()
 window.title('Рассчёт TC')
@@ -92,6 +98,16 @@ PRlbl = Label(window, text='PR', font=('Arial Bold', 14))
 PRlbl.grid(column=8, row=0)
 PRtxt = Entry(window, width=6)
 PRtxt.grid(column=8, row=1)
+
+ARlbl = Label(window, text='AR', font=('Arial Bold', 14))
+ARlbl.grid(column=9, row=0)
+ARtxt = Entry(window, width=6)
+ARtxt.grid(column=9, row=1)
+
+QCRlbl = Label(window, text='QCR', font=('Arial Bold', 14))
+QCRlbl.grid(column=9, row=0)
+QCRtxt = Entry(window, width=6)
+QCRtxt.grid(column=9, row=1)
 
 btn = Button(window, text='Рассчитать', command=Cliсked, width=8)
 btn.grid(column=4, row=2)

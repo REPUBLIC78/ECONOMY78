@@ -16,7 +16,7 @@ vd = {
 vl = list(vd)
 
 def findA(vd):
-    vd == vd2
+    vd2 = vd
     while True:
         for i in range(len(vd)):
             if vl[i] == 'TC':
@@ -91,30 +91,38 @@ def fVC(vd):
     else:
         return 'Недостаточно данных'
 
-def fAFC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fAFC(vd):
+    if vd['AFC'] != None:
+        return vd['AFC']
 
-def fAVC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fAVC(vd):
+    if vd['AVC']!= None:
+        return vd['AVC']
 
-def fQ(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    if Q != 0:
-        return
+def fQ(vd):
+    if vd['Q']!= None:
+        return vd['Q']
 
-def fP(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fP(vd):
+    if vd['P']!= None:
+        return vd['P']
 
-def fATC(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fATC(vd):
+    if vd['ATC']!= None:
+        return vd['ATC']
 
-def fTR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fTR(vd):
+    if vd['TR']!= None:
+        return vd['TR']
 
-def fPR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fPR(vd):
+    if vd['PR']!= None:
+        return vd['PR']
 
-def fAR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fAR(vd):
+    if vd['AR']!= None:
+        return vd['AR']
 
-def fQCR(TC, VC, FC, AFC, AVC, Q, P, ATC, TR, PR, AR, QCR):
-    pass
+def fQCR(vd):
+    if vd['QCR']!= None:
+        return vd['QCR']

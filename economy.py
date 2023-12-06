@@ -13,6 +13,44 @@ vd = {
     'QCR': None
 }
 
+vl = list(vd)
+
+def findA(vd):
+    vd == vd2
+    while True:
+        for i in range(len(vd)):
+            if vl[i] == 'TC':
+                vd2[vl[i]] = fTC(vd)
+            if vl[i] == 'VC':
+                vd2[vl[i]] = fVC(vd)
+            if vl[i] == 'FC':
+                vd2[vl[i]] = fFC(vd)
+            if vl[i] == 'AFC':
+                vd2[vl[i]] = fAFC(vd)
+            if vl[i] == 'AVC':
+                vd2[vl[i]] = fAVC(vd)
+            if vl[i] == 'Q':
+                vd2[vl[i]] = fQ(vd)
+            if vl[i] == 'P':
+                vd2[vl[i]] = fP(vd)
+            if vl[i] == 'ATC':
+                vd2[vl[i]] = fATC(vd)
+            if vl[i] == 'TR':
+                vd2[vl[i]] = fTR(vd)
+            if vl[i] == 'PR':
+                vd2[vl[i]] = fPR(vd)
+            if vl[i] == 'AR':
+                vd2[vl[i]] = fAR(vd)
+            if vl[i] == 'QCR':
+                vd2[vl[i]] = fQCR(vd)
+        if vd != vd2:
+            vd = vd2
+            continue
+        else:
+            return vd2
+
+            
+
 def fTC(vd):
     if vd['TC'] != None:
         return vd['TC']

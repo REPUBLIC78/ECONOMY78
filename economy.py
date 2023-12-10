@@ -54,27 +54,29 @@ def findA(vd):
 def fTC(vd):
     if vd['TC'] != None:
         return vd['TC']
-    elif vd['VC'] and vd['FC']:
+    elif None not in [vd['VC'], vd['FC']]:
         return vd['VC'] + vd['FC']
-    elif vd['AFC'] and vd['AVC'] and vd['Q']:
+    elif None not in [vd['AFC'], vd['AVC'], vd['Q']]:
         return vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']
-    elif vd['TR'] and vd['PR']:
+    elif None not in [vd['TR'], vd['PR']]:
         return vd['TR'] - vd['PR']
-    elif vd['TR'] and vd['Q'] and vd['ATC'] and vd['P']:
+    elif None not in [vd['TR'], vd['Q'], vd['ATC'], vd['P']]:
         return vd['TR'] - ((vd['P'] - vd['ATC']) * vd['Q'])
+    elif None not in [vd['ATC'], vd['Q']]:
+        return vd['ATC'] * vd['Q']
     else:
         return 'Недостаточно данных'
 
 def fFC(vd):
     if vd['FC'] != None:
         return vd['FC']
-    elif vd['TC'] and vd['VC']:
+    elif None not in [vd['TC'], vd['VC']]:
         return vd['TC'] - vd['VC']
-    elif vd['AFC'] and vd['Q'] and vd['AVC'] and vd['VC']:
+    elif None not in [vd['AFC'], vd['Q'], vd['AVC'], vd['VC']]:
         return (vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']) - vd['VC']
-    elif vd['AFC'] and ['Q']:
+    elif None not in [vd['AFC'], ['Q']]:
         return vd['AFC'] * vd['Q']
-    elif vd['QCR'] and vd['P'] and vd['AVC']:
+    elif None not in [vd['QCR'], vd['P'], vd['AVC']]:
         return vd['QCR'] * (vd['P'] - vd['AVC'])
     else:
         return 'Недостаточно данных'
@@ -82,11 +84,11 @@ def fFC(vd):
 def fVC(vd):
     if vd['VC'] != None:
         return vd['VC']
-    elif vd['TC'] and vd['FC']:
+    elif None not in [vd['TC'], vd['FC']]:
         return vd['TC'] - vd['FC']
-    elif vd['AVC'] and vd['Q']:
+    elif None not in [vd['AVC'], vd['Q']]:
         return vd['AVC'] * vd['Q']
-    elif vd['AFC'] and vd['Q'] and vd['AVC'] and vd['FC']:
+    elif None not in [vd['AFC'], vd['Q'], vd['AVC'], vd['FC']]:
         return (vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']) - vd['FC']
     else:
         return 'Недостаточно данных'

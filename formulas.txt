@@ -1,23 +1,22 @@
 TC  - total cost             общие издержки +
 FC  - fixed cost             постоянные издержки +
 VC  - variable cost          переменные издержки +
-Q   - quantity               колличество
-P   - price                  цена
+Q   - quantity               колличество +
+P   - price                  цена +
 
-AFC - Average fixed costs    cредние постоянные затраты
-AVC - Average variable costs cредние переменные затраты
-ATC - Average total costs    средние общие затраты (себестоимость)
+AFC - Average fixed costs    cредние постоянные затраты +
+AVC - Average variable costs cредние переменные затраты + 
+ATC - Average total costs    средние общие затраты (себестоимость) +
 
-TR  - total revenue          общая выручка
-AR  - average revenue        средняя выручка на товар
+TR  - total revenue          общая выручка +
+AR  - average revenue        средняя выручка на товар +
 
-MC  - margin costs           дополнительные издержки
-MR  - margin revenue         дополнительная выручка
+#MC  - margin costs           дополнительные издержки
+#MR  - margin revenue         дополнительная выручка
 
-Pr  - profit                 прибыль
-Qcr - critical quantity      критическое количество
+PR  - profit                 прибыль +
+QCR - critical quantity      критическое количество +
 
-6 / 2 = 3
 
 TC = VC + FC 
 TC = AFC * Q + AVC * Q
@@ -30,19 +29,53 @@ FC = (AFC * Q + AVC * Q) - VC
 FC = AFC * Q
 FC = Qcr * (P - AVC)
 
-GPT 
-    Q = TC / (AFC + AVC)
-    Q = (TR - TC) / (P - ATC)
-    Q = TC / ATC
-    Q = (FC + VC) / (AFC + AVC)
-    Q = FC / AFC
-    Q = VC / AVC
-    Q = TR / P
-    Q = TR / AR
+Q = TC / (AFC + AVC)
+Q = (TR - TC) / (P - ATC)
+Q = PR / (P - ATC)
+Q = TC / ATC
+Q = (FC + VC) / (AFC + AVC)
+Q = FC / AFC
+Q = VC / AVC
+Q = TR / P
+Q = TR / AR
 
 VC = TC - FC
 VC = AVC * Q
 VC = (AFC * Q + AVC * Q) - FC
+
+Qcr = FC/(P - AVC)
+
+AFC = (TC - (AVC * Q)) / Q
+AFC = FC / Q
+AFC = ATC - AVC
+
+P = AR
+P = TR / Q
+P = (FC / QCR) + AVC
+P = (PR / Q) + ATC
+
+AR = P
+AR = TR / Q
+AR = (FC / QCR) + AVC
+AR = (PR / Q) + ATC
+
+PR = TR - TC
+PR = (P - ATC) * Q
+
+TR = Q * P
+TR = AR * Q
+TR = TC + PR
+
+AVC = VC / Q
+AVC = ATC - AFC
+AVC = P - (FC / QCR)
+AVC = (TC - (AFC / Q)) / Q
+
+ATC = AFC + AVC
+ATC = P - (PR / Q)
+ATC = TC / Q
+
+_____________________________________
 
 ATC = AFC + AVC
 ATC = TC / Q
@@ -65,5 +98,3 @@ MR = TR(Q) - TR(Q - 1)
 
 Pr = TR - TC
 Pr = (P - ATC) * Q
-
-Qcr = FC/(P - AVC)

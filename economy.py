@@ -50,7 +50,11 @@ def findA(vd):
             return vd2
 
             
-
+#TC = VC + FC 
+#TC = AFC * Q + AVC * Q
+#TC = TR - ((P - ATC) * Q)
+#TC = TR - Pr
+#TC = ATC * Q
 def fTC(vd):
     if vd['TC'] != None:
         return vd['TC']
@@ -67,6 +71,10 @@ def fTC(vd):
     else:
         return 'Недостаточно данных'
 
+#FC = TC - VC
+#FC = (AFC * Q + AVC * Q) - VC
+#FC = AFC * Q
+#FC = Qcr * (P - AVC)
 def fFC(vd):
     if vd['FC'] != None:
         return vd['FC']
@@ -81,6 +89,9 @@ def fFC(vd):
     else:
         return 'Недостаточно данных'
 
+#VC = TC - FC
+#VC = AVC * Q
+#VC = (AFC * Q + AVC * Q) - FC
 def fVC(vd):
     if vd['VC'] != None:
         return vd['VC']
@@ -108,6 +119,8 @@ def fQ(vd):
 def fP(vd):
     if vd['P']!= None:
         return vd['P']
+    if vd['AR']!= None:
+        return vd['AR']
 
 def fATC(vd):
     if vd['ATC']!= None:
@@ -124,6 +137,8 @@ def fPR(vd):
 def fAR(vd):
     if vd['AR']!= None:
         return vd['AR']
+    if vd['P']!= None:
+        return vd['P']
 
 def fQCR(vd):
     if vd['QCR']!= None:

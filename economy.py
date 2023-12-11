@@ -165,7 +165,7 @@ def fQ(vd):
         return (vd['FC'] / vd['AFC'])
     elif None not in [vd['VC'], vd['AVC']]:
         return (vd['VC'] / vd['AVC'])
-    elif None not in [vd['TR'] / vd['P']]:
+    elif None not in [vd['TR'], vd['P']]:
         return (vd['TR'] / vd['P'])
     elif None not in [vd['TR'], vd['AR']]:
         return (vd['TR'] / vd['AR'])

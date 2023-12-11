@@ -1,11 +1,18 @@
-def digital_root(n):
-    while len(str(n)) != 1:
-        n = sum_arr(n)
-    return n
+from economy import findA
 
-def sum_arr(string):
-    array = [int(i) for i in str(string)]
-    sum_array = sum(array)
-    return sum_array
+vd = {
+    'TC': None,
+    'VC': 23,
+    'FC': 32,
+    'AFC': None,
+    'AVC': None,
+    'Q': None,
+    'P': None,
+    'ATC': None,
+    'TR': None,
+    'PR': None,
+    'AR': None,
+    'QCR': None
+}
 
-print(digital_root(12312323333))
+print(findA(vd))

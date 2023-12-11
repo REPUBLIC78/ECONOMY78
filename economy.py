@@ -20,35 +20,43 @@ def findA(vd):
     while True:
         for i in range(len(vd)):
             if vl[i] == 'TC':
-                vd2[vl[i]] = round(fTC(vd), 2)
+                vd2[vl[i]] = fTC(vd)
             if vl[i] == 'VC':
-                vd2[vl[i]] = round(fVC(vd), 2)
+                vd2[vl[i]] = fVC(vd)
             if vl[i] == 'FC':
-                vd2[vl[i]] = round(fFC(vd), 2)
+                vd2[vl[i]] = fFC(vd)
             if vl[i] == 'AFC':
-                vd2[vl[i]] = round(fAFC(vd), 2)
+                vd2[vl[i]] = fAFC(vd)
             if vl[i] == 'AVC':
-                vd2[vl[i]] = round(fAVC(vd), 2)
+                vd2[vl[i]] = fAVC(vd)
             if vl[i] == 'Q':
-                vd2[vl[i]] = round(fQ(vd), 2)
+                vd2[vl[i]] = fQ(vd)
             if vl[i] == 'P':
-                vd2[vl[i]] = round(fP(vd), 2)
+                vd2[vl[i]] = fP(vd)
             if vl[i] == 'ATC':
-                vd2[vl[i]] = round(fATC(vd), 2)
+                vd2[vl[i]] = fATC(vd)
             if vl[i] == 'TR':
-                vd2[vl[i]] = round(fTR(vd), 2)
+                vd2[vl[i]] = fTR(vd)
             if vl[i] == 'PR':
-                vd2[vl[i]] = round(fPR(vd), 2)
+                vd2[vl[i]] = fPR(vd)
             if vl[i] == 'AR':
-                vd2[vl[i]] = round(fAR(vd), 2)
+                vd2[vl[i]] = fAR(vd)
             if vl[i] == 'QCR':
-                vd2[vl[i]] = round(fQCR(vd), 2)
+                vd2[vl[i]] = fQCR(vd)
         if vd != vd2:
             vd = vd2
             continue
         else:
-            return vd2
+            return round_array(vd2)
 
+def round_array(vd2):
+    vd_return = []
+    for i in vd2:
+        if i != None:
+            vd_return.append(round(i, 2))
+        else:
+            vd_return.append(i)
+    return vd_return
             
 #TC = VC + FC 
 #TC = AFC * Q + AVC * Q

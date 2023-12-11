@@ -14,7 +14,9 @@ vd = {
     'TR': None,
     'PR': None,
     'AR': None,
-    'QCR': None
+    'QCR': None,
+    'MC': None,
+    'MR': None
 }
 
 vl, cl, rl = list(vd), [], []#список ключей, пустой список для наименований полей, список с полями ввода
@@ -25,7 +27,7 @@ def Cliсked():
             vd[vl[i]] = int(rl[i].get())
         except:
             vd[vl[i]] = None
-    if fTC(vd) == 'Недостаточно данных':
+    if fTC(vd) == None:
         ANSlbl.configure(text='Н/д')
     else:
         ANSlbl.configure(text=f'TC = {fTC(vd)}')

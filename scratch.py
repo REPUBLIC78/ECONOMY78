@@ -1,13 +1,13 @@
 from economy import findA
 
 vd = {
-    'TC': None,
-    'VC': 23,
+    'TC': 50,
+    'VC': None,
     'FC': 32,
     'AFC': None,
     'AVC': None,
-    'Q': None,
-    'P': None,
+    'Q': 6,
+    'P': 8,
     'ATC': None,
     'TR': None,
     'PR': None,

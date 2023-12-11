@@ -83,7 +83,6 @@ def fTC(vd):
 #FC = (AFC * Q + AVC * Q) - VC
 #FC = AFC * Q
 #FC = Qcr * (P - AVC)
-
 def fFC(vd):
     if vd['FC'] != None:
         return vd['FC']
@@ -155,7 +154,6 @@ def fAVC(vd):
 # Q = VC / AVC
 # Q = TR / P
 # Q = TR / AR
-
 def fQ(vd):
     if vd['Q']!= None:
         return vd['Q']
@@ -184,7 +182,6 @@ def fQ(vd):
 # P = TR / Q
 # P = (FC / QCR) + AVC
 # P = (PR / Q) + ATC
-
 def fP(vd):
     if vd['P']!= None:
         return vd['P']
@@ -202,7 +199,6 @@ def fP(vd):
 # ATC = AFC + AVC
 # ATC = P - (PR / Q)
 # ATC = TC / Q
-
 def fATC(vd):
     if vd['ATC']!= None:
         return vd['ATC']
@@ -218,7 +214,6 @@ def fATC(vd):
 # TR = Q * P
 # TR = AR * Q
 # TR = TC + PR
-
 def fTR(vd):
     if vd['TR']!= None:
         return vd['TR']
@@ -233,7 +228,6 @@ def fTR(vd):
 
 # Pr = TR - TC
 # Pr = (P - ATC) * Q
-
 def fPR(vd):
     if vd['PR']!= None:
         return vd['PR']
@@ -248,7 +242,6 @@ def fPR(vd):
 # AR = TR / Q
 # AR = (FC / QCR) + AVC
 # AR = (PR / Q) + ATC
-
 def fAR(vd):
     if vd['AR']!= None:
         return vd['AR']
@@ -264,7 +257,6 @@ def fAR(vd):
         return None
 
 # Qcr = FC/(P - AVC)
-
 def fQCR(vd):
     if vd['QCR']!= None:
         return vd['QCR']

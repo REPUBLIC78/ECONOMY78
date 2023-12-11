@@ -19,6 +19,13 @@ vd = {
 
 vl, cl, rl, al = list(vd), [], [], []#список ключей, пустой список для наименований полей, список с полями ввода, список с ответами
 
+window = Tk()
+window.title('Рассчёты')
+window.geometry('640x360')
+window.minsize(640,360)
+window.maxsize(1280,720)
+
+
 def Cliсked():
     for i in range(len(vd)):
         try:
@@ -32,11 +39,6 @@ def Cliсked():
         else:
             al[i].configure(text='н/д', style="main.TLabel")
 
-window = Tk()
-window.title('Рассчёт TC')
-window.geometry('640x360')
-window.minsize(640,360)
-window.maxsize(1280,720)
 
 label_style = ttk.Style()
 label_style.configure("main.TLabel",     # имя стиля
@@ -79,7 +81,7 @@ for i in range(len(vd)): #поля для вывода
 
 btn = ttk.Button(window, text='Рассчитать', command=Cliсked, width=9, style="button.TButton") #кнопка рассчитать
 
-if len(vd) % 2 == 0:
+if len(vd) % 2 == 0: #адаптив для кнопки
     btn.grid(column=(int(len(vd) / 2)) - 1, row=3, columnspan=2)
 else:
     btn.grid(column=(len(vd) // 2) - 1, row=3, columnspan=3)

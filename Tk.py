@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from economy import fTC
+from economy import findA
 
 vd = {
     'TC': None,
@@ -8,27 +8,27 @@ vd = {
     'FC': None,
     'AFC': None,
     'AVC': None,
+    'ATC': None,
     'Q': None,
     'P': None,
-    'ATC': None,
     'TR': None,
     'PR': None,
     'AR': None,
     'QCR': None
 }
 
-vl, cl, rl = list(vd), [], []#список ключей, пустой список для наименований полей, список с полями ввода
+vl, cl, rl, al = list(vd), [], [], []#список ключей, пустой список для наименований полей, список с полями ввода, список с ответами
 
 def Cliсked():
     for i in range(len(vd)):
         try:
-            vd[vl[i]] = int(rl[i].get())
+            vd[vl[i]] = float(rl[i].get())
         except:
             vd[vl[i]] = None
-    if fTC(vd) == None:
-        ANSlbl.configure(text='Н/д')
-    else:
-        ANSlbl.configure(text=f'TC = {fTC(vd)}')
+    ansd = findA(vd)
+    for i in range(len(vd)):
+        al.append(ttk.Label(window, text=str(ansd[vl[i]]), style="main.TLabel"))
+        al[i].grid(column=i, row=2, columnspan=1)
 
 window = Tk()
 window.title('Рассчёт TC')
@@ -67,12 +67,12 @@ for i in range(len(vd)): #поля ввода
 
 btn = ttk.Button(window, text='Рассчитать', command=Cliсked, width=9, style="button.TButton") #кнопка рассчитать
 
-ANSlbl = ttk.Label(window, text='TC = ', style="main.TLabel") #вывод ответа
+#ANSlbl = ttk.Label(window, text='TC = ', style="main.TLabel") #вывод ответа
 
 if len(vd) % 2 == 0:
-    btn.grid(column=(int(len(vd) / 2)) - 1, row=2, columnspan=2)
-    ANSlbl.grid(column=(int(len(vd) / 2)) - 1, row=3, columnspan=2)
+    btn.grid(column=(int(len(vd) / 2)) - 1, row=3, columnspan=2)
+    #ANSlbl.grid(column=(int(len(vd) / 2)) - 1, row=2, columnspan=2)
 else:
-    btn.grid(column=(len(vd) // 2) - 1, row=2, columnspan=3)
-    ANSlbl.grid(column=(len(vd) // 2) - 1, row=3, columnspan=3)
+    btn.grid(column=(len(vd) // 2) - 1, row=3, columnspan=3)
+    #ANSlbl.grid(column=(len(vd) // 2) - 1, row=2, columnspan=3)
 window.mainloop()

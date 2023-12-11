@@ -1,13 +1,13 @@
-from economy import findA
+from economy import round_array
 
 vd = {
-    'TC': 50,
-    'VC': None,
-    'FC': 32,
+    'TC': None,
+    'VC': 4.3213,
+    'FC': 32.313,
     'AFC': None,
     'AVC': None,
-    'Q': 6,
-    'P': 8,
+    'Q': None,
+    'P': None,
     'ATC': None,
     'TR': None,
     'PR': None,
@@ -15,4 +15,4 @@ vd = {
     'QCR': None
 }
 
-print(findA(vd))
+print(round_array(vd))

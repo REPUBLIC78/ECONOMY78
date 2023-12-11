@@ -49,14 +49,14 @@ def findA(vd):
         else:
             return round_array(vd2)
 
-def round_array(vd2):
-    vd_return = []
-    for i in range(0, len(vd2) - 1):
-        if vd2[i] != None:
-            vd_return.append(round(vd[i], 2))
+def round_array(vd):
+    vd2 = vd
+    for i in vd:
+        if vd[i] != None:
+            vd2[i] = round(vd[i], 2)
         else:
-            vd_return.append(vd[i])
-    return vd_return
+            vd2[i] = vd[i]
+    return vd2
             
 #TC = VC + FC 
 #TC = AFC * Q + AVC * Q

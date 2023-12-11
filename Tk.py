@@ -25,10 +25,12 @@ def Cliсked():
             vd[vl[i]] = float(rl[i].get())
         except:
             vd[vl[i]] = None
-    ansd = findA(vd)
+    avd = findA(vd)
     for i in range(len(vd)):
-        al.append(ttk.Label(window, text=str(ansd[vl[i]]), style="main.TLabel"))
-        al[i].grid(column=i, row=2, columnspan=1)
+        if avd[vl[i]] != None:
+            al[i].configure(text=str(avd[vl[i]]), style="main.TLabel")
+        else:
+            al[i].configure(text='н/д', style="main.TLabel")
 
 window = Tk()
 window.title('Рассчёт TC')
@@ -42,6 +44,12 @@ label_style.configure("main.TLabel",     # имя стиля
                     foreground="#ffffff",   # цвет текста
                     padding=0,              # отступы
                     background="#36393e")   # фоновый цвет
+
+label_style.configure("main1.TLabel",     # имя стиля
+                    font="helvetica 14",    # шрифт
+                    foreground="#ffffff",   # цвет текста
+                    padding=0,              # отступы
+                    background="#424549")   # фоновый цвет
 
 label_style.configure("button.TButton",     # имя стиля
                     font="helvetica 14",    # шрифт
@@ -65,14 +73,14 @@ for i in range(len(vd)): #поля ввода
     rl.append(Entry(window, width=6))
     rl[i].grid(column=i, row=1)
 
-btn = ttk.Button(window, text='Рассчитать', command=Cliсked, width=9, style="button.TButton") #кнопка рассчитать
+for i in range(len(vd)): #поля для вывода
+    al.append(ttk.Label(window, text=vd[vl[i]], style="main1.TLabel"))
+    al[i].grid(column=i, row=2)
 
-#ANSlbl = ttk.Label(window, text='TC = ', style="main.TLabel") #вывод ответа
+btn = ttk.Button(window, text='Рассчитать', command=Cliсked, width=9, style="button.TButton") #кнопка рассчитать
 
 if len(vd) % 2 == 0:
     btn.grid(column=(int(len(vd) / 2)) - 1, row=3, columnspan=2)
-    #ANSlbl.grid(column=(int(len(vd) / 2)) - 1, row=2, columnspan=2)
 else:
     btn.grid(column=(len(vd) // 2) - 1, row=3, columnspan=3)
-    #ANSlbl.grid(column=(len(vd) // 2) - 1, row=2, columnspan=3)
 window.mainloop()

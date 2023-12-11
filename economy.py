@@ -69,7 +69,7 @@ def fTC(vd):
     elif None not in [vd['ATC'], vd['Q']]:
         return vd['ATC'] * vd['Q']
     else:
-        return 'Недостаточно данных'
+        return None
 
 #FC = TC - VC
 #FC = (AFC * Q + AVC * Q) - VC
@@ -87,7 +87,7 @@ def fFC(vd):
     elif None not in [vd['QCR'], vd['P'], vd['AVC']]:
         return vd['QCR'] * (vd['P'] - vd['AVC'])
     else:
-        return 'Недостаточно данных'
+        return None
 
 #VC = TC - FC
 #VC = AVC * Q
@@ -102,7 +102,7 @@ def fVC(vd):
     elif None not in [vd['AFC'], vd['Q'], vd['AVC'], vd['FC']]:
         return (vd['AFC'] * vd['Q'] + vd['AVC'] * vd['Q']) - vd['FC']
     else:
-        return 'Недостаточно данных'
+        return None
 
 # AFC = (TC - (AVC * Q)) / Q
 # AFC = FC / Q
@@ -116,6 +116,9 @@ def fAFC(vd):
         return vd['FC'] / vd['Q']
     elif None not in [vd['ATC'], vd['AVC']]:
         return (vd['ATC'] - vd['AVC'])
+    else:
+        return None
+
 # AVC = VC / Q
 # AVC = ATC - AFC
 # AVC = P - (FC / QCR)
@@ -125,10 +128,14 @@ def fAVC(vd):
         return vd['AVC']
     elif None not in [vd['VC'], vd['Q']]:
         return vd['VC'] / vd['Q']
+    elif None not in [vd['ATC'], vd['AFC']]:
+        return vd['ATC'] - vd['AFC']
     elif None not in [vd['P'], vd['FC'], vd['QCR']]:
         return vd['P'] - (vd['FC'] / vd['QCR'])
     elif None not in [vd['TC'], vd['AFC'], vd['Q']]:
         return (vd['TC'] - (vd['AFC'] / vd['Q'])) / vd['Q']
+    else:
+        return None
 
 def fQ(vd):
     if vd['Q']!= None:

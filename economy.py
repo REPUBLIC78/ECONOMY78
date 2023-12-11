@@ -137,33 +137,122 @@ def fAVC(vd):
     else:
         return None
 
+# Q = TC / (AFC + AVC)
+# Q = (TR - TC) / (P - ATC)
+# Q = PR / (P - ATC)
+# Q = TC / ATC
+# Q = (FC + VC) / (AFC + AVC)
+# Q = FC / AFC
+# Q = VC / AVC
+# Q = TR / P
+# Q = TR / AR
+
 def fQ(vd):
     if vd['Q']!= None:
         return vd['Q']
+    elif None not in [vd['Q'], vd['AFC'], vd['AVC']]:
+        return vd['TC'] / (vd['AFC'] + vd['AVC'])
+    elif None not in [vd['TC'], vd['TR'], vd['P'], vd['ATC']]:
+        return (vd['TR'] - vd['TC']) / (vd['P'] - vd['ATC'])
+    elif None not in [vd['PR'], vd['P'], vd['ATC']]:
+        return (vd['PR'] / (vd['P'] - vd['ATC']))
+    elif None not in [vd['TC'], vd['ATC']]:
+        return (vd['TC'] / vd['ATC'])
+    elif None not in [vd['FC'], vd['VC'], vd['AFC'], vd['AVC']]:
+        return (vd['FC'] + vd['VC']) / (vd['AFC'] + vd['AVC'])
+    elif None not in [vd['FC'], vd['AFC']]:
+        return (vd['FC'] / vd['AFC'])
+    elif None not in [vd['VC'], vd['AVC']]:
+        return (vd['VC'] / vd['AVC'])
+    elif None not in [vd['TR'] / vd['P']]:
+        return (vd['TR'] / vd['P'])
+    elif None not in [vd['TR'], vd['AR']]:
+        return (vd['TR'] / vd['AR'])
+    else:
+        return None
+
+# P = AR
+# P = TR / Q
+# P = (FC / QCR) + AVC
+# P = (PR / Q) + ATC
 
 def fP(vd):
     if vd['P']!= None:
         return vd['P']
     if vd['AR']!= None:
         return vd['AR']
+    elif None not in [vd['TR'], vd['Q']]:
+        return (vd['TR'] / vd['Q'])
+    elif None not in [vd['FC'], vd['QCR'], vd['AVC']]:
+        return (vd['FC'] / vd['QCR']) + vd['AVC']
+    elif None not in [vd['PR'], vd['Q'], vd['ATC']]:
+        return ((vd['PR'] / vd['Q']) + vd['ATC'])
+    else:
+        return None
+
+# ATC = AFC + AVC
+# ATC = P - (PR / Q)
+# ATC = TC / Q
 
 def fATC(vd):
     if vd['ATC']!= None:
         return vd['ATC']
+    elif None not in [vd['AFC'], vd['AVC']]:
+        return (vd['AFC'] + vd['AVC'])
+    elif None not in [vd['P'], vd['PR'], vd['Q']]:
+        return (vd['P'] - (vd['PR'] / vd['Q']))
+    elif None not in [vd['TC'], vd['Q']]:
+        return (vd['TC'] / vd['Q'])
+    else:
+        return None
+    
+# TR = Q * P
+# TR = AR * Q
+# TR = TC + PR
 
 def fTR(vd):
     if vd['TR']!= None:
         return vd['TR']
+    elif None not in [vd['Q'], vd['P']]:
+        return (vd['P'] * vd['Q'])
+    elif None not in [vd['AR'], vd['Q']]:
+        return (vd['AR'] * vd['Q'])
+    elif None not in [vd['TC'], vd['PR']]:
+        return (vd['TC'] + vd['PR'])
+    else:
+        return None
+
+# Pr = TR - TC
+# Pr = (P - ATC) * Q
 
 def fPR(vd):
     if vd['PR']!= None:
         return vd['PR']
+    elif None not in [vd['TC'], vd['TR']]:
+        return (vd['TR'] - vd['TC'])
+    elif None not in [vd['P'], vd['ATC'], vd['Q']]:
+        return (vd['P'] - vd['ATC'] * vd['Q'])
+    else:
+        return None
+
+# AR = P
+# AR = TR / Q
+# AR = (FC / QCR) + AVC
+# AR = (PR / Q) + ATC
 
 def fAR(vd):
     if vd['AR']!= None:
         return vd['AR']
     if vd['P']!= None:
         return vd['P']
+    elif None not in [vd['TR'], vd['Q']]:
+        return (vd['TR'] / vd['Q'])
+    elif None not in [vd['FC'], vd['QCR'], vd['AVC']]:
+        return (vd['FC'] / vd['QCR']) + vd['AVC']
+    elif None not in [vd['PR'], vd['Q'], vd['ATC']]:
+        return ((vd['PR'] / vd['Q']) + vd['ATC'])
+    else:
+        return None
 
 def fQCR(vd):
     if vd['QCR']!= None:

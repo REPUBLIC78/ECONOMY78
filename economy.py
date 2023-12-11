@@ -51,11 +51,11 @@ def findA(vd):
 
 def round_array(vd2):
     vd_return = []
-    for i in vd2:
-        if i != None:
-            vd_return.append(round(i, 2))
+    for i in range(0, len(vd2) - 1):
+        if vd2[i] != None:
+            vd_return.append(round(vd[i], 2))
         else:
-            vd_return.append(i)
+            vd_return.append(vd[i])
     return vd_return
             
 #TC = VC + FC 

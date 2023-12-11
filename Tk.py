@@ -14,9 +14,7 @@ vd = {
     'TR': None,
     'PR': None,
     'AR': None,
-    'QCR': None,
-    'MC': None,
-    'MR': None
+    'QCR': None
 }
 
 vl, cl, rl = list(vd), [], []#список ключей, пустой список для наименований полей, список с полями ввода

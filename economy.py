@@ -1,15 +1,15 @@
 vd = {
     'TC': None,
-    'FC': None,
     'VC': None,
-    'Q': None,
-    'P': None,
+    'FC': None,
     'AFC': None,
     'AVC': None,
+    'Q': None,
+    'P': None,
     'ATC': None,
     'TR': None,
-    'AR': None,
     'PR': None,
+    'AR': None,
     'QCR': None
 }
 

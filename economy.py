@@ -104,13 +104,31 @@ def fVC(vd):
     else:
         return 'Недостаточно данных'
 
+# AFC = (TC - (AVC * Q)) / Q
+# AFC = FC / Q
+# AFC = ATC - AVC
 def fAFC(vd):
     if vd['AFC'] != None:
         return vd['AFC']
-
+    elif None not in [vd['TC'], vd['AVC'], vd['Q']]:
+        return (vd['TC'] - (vd['AVC'] * vd['Q'])) / (vd['Q'])
+    elif None not in [vd['FC'], vd['Q']]:
+        return vd['FC'] / vd['Q']
+    elif None not in [vd['ATC'], vd['AVC']]:
+        return (vd['ATC'] - vd['AVC'])
+# AVC = VC / Q
+# AVC = ATC - AFC
+# AVC = P - (FC / QCR)
+# AVC = (TC - (AFC / Q)) / Q
 def fAVC(vd):
     if vd['AVC']!= None:
         return vd['AVC']
+    elif None not in [vd['VC'], vd['Q']]:
+        return vd['VC'] / vd['Q']
+    elif None not in [vd['P'], vd['FC'], vd['QCR']]:
+        return vd['P'] - (vd['FC'] / vd['QCR'])
+    elif None not in [vd['TC'], vd['AFC'], vd['Q']]:
+        return (vd['TC'] - (vd['AFC'] / vd['Q'])) / vd['Q']
 
 def fQ(vd):
     if vd['Q']!= None:

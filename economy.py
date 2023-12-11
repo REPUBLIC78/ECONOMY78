@@ -75,6 +75,7 @@ def fTC(vd):
 #FC = (AFC * Q + AVC * Q) - VC
 #FC = AFC * Q
 #FC = Qcr * (P - AVC)
+
 def fFC(vd):
     if vd['FC'] != None:
         return vd['FC']
@@ -254,6 +255,12 @@ def fAR(vd):
     else:
         return None
 
+# Qcr = FC/(P - AVC)
+
 def fQCR(vd):
     if vd['QCR']!= None:
         return vd['QCR']
+    elif None not in [vd['FC'], vd['P'], vd['AVC']]:
+        return (vd['FC'] / (vd['P'] - vd['AVC']))
+    else:
+        return None

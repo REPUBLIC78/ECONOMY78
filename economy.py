@@ -4,9 +4,9 @@ vd = {
     'FC': None,
     'AFC': None,
     'AVC': None,
+    'ATC': None,
     'Q': None,
     'P': None,
-    'ATC': None,
     'TR': None,
     'PR': None,
     'AR': None,
@@ -32,7 +32,7 @@ def findA(vd):
             if vl[i] == 'Q':
                 vd2[vl[i]] = fQ(vd)
             if vl[i] == 'P':
-                vd2[vl[i]] = fP(vd)
+                vd2[vl[i]] = fP_AR(vd)
             if vl[i] == 'ATC':
                 vd2[vl[i]] = fATC(vd)
             if vl[i] == 'TR':
@@ -40,7 +40,7 @@ def findA(vd):
             if vl[i] == 'PR':
                 vd2[vl[i]] = fPR(vd)
             if vl[i] == 'AR':
-                vd2[vl[i]] = fP(vd)
+                vd2[vl[i]] = fP_AR(vd)
             if vl[i] == 'QCR':
                 vd2[vl[i]] = fQCR(vd)
         if vd != vd2:
@@ -51,7 +51,7 @@ def findA(vd):
                 vd2['AR'] = vd2['P']
             elif (vd2['AR'] != None) and (vd2['P'] == None):
                 vd2['P'] = vd2['AR']
-            return round_array(vd2)
+            return round_array(round_array(vd2))
 
 def round_array(vd):
     vd2 = vd
@@ -189,7 +189,7 @@ def fQ(vd):
 # P = TR / Q
 # P = (FC / QCR) + AVC
 # P = (PR / Q) + ATC
-def fP(vd):
+def fP_AR(vd):
     if vd['P']!= None:
         return vd['P']
     if vd['AR']!= None:
@@ -202,6 +202,25 @@ def fP(vd):
         return ((vd['PR'] / vd['Q']) + vd['ATC'])
     else:
         return None
+
+# AR = P
+# AR = TR / Q
+# AR = (FC / QCR) + AVC
+# AR = (PR / Q) + ATC
+# Вместо этой функции используется fP() т.к. AR = P
+#def fAR(vd):
+#    if vd['AR']!= None:
+#        return vd['AR']
+#    if vd['P']!= None:
+#        return vd['P']
+#    elif None not in [vd['TR'], vd['Q']]:
+#        return (vd['TR'] / vd['Q'])
+#    elif None not in [vd['FC'], vd['QCR'], vd['AVC']]:
+#        return (vd['FC'] / vd['QCR']) + vd['AVC']
+#    elif None not in [vd['PR'], vd['Q'], vd['ATC']]:
+#        return ((vd['PR'] / vd['Q']) + vd['ATC'])
+#    else:
+#        return None
 
 # ATC = AFC + AVC
 # ATC = P - (PR / Q)
@@ -242,25 +261,6 @@ def fPR(vd):
         return (vd['TR'] - vd['TC'])
     elif None not in [vd['P'], vd['ATC'], vd['Q']]:
         return (vd['P'] - vd['ATC'] * vd['Q'])
-    else:
-        return None
-
-# AR = P
-# AR = TR / Q
-# AR = (FC / QCR) + AVC
-# AR = (PR / Q) + ATC
-# Вместо этой функции используется fP() т.к. AR = P
-def fAR(vd):
-    if vd['AR']!= None:
-        return vd['AR']
-    if vd['P']!= None:
-        return vd['P']
-    elif None not in [vd['TR'], vd['Q']]:
-        return (vd['TR'] / vd['Q'])
-    elif None not in [vd['FC'], vd['QCR'], vd['AVC']]:
-        return (vd['FC'] / vd['QCR']) + vd['AVC']
-    elif None not in [vd['PR'], vd['Q'], vd['ATC']]:
-        return ((vd['PR'] / vd['Q']) + vd['ATC'])
     else:
         return None
 

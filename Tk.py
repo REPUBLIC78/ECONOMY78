@@ -24,6 +24,7 @@ window.title('Рассчёты')
 window.geometry('640x360')
 window.minsize(640,360)
 window.maxsize(990,410)
+window.iconbitmap('img/logo.ico')
 
 
 def Cliсked():

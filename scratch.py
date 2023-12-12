@@ -1,18 +1,27 @@
-from economy import round_array
+from economy import findA
+from itertools import permutations
 
 vd = {
     'TC': None,
-    'VC': 4.3213,
-    'FC': 32.313,
+    'VC': None,
+    'FC': None,
     'AFC': None,
-    'AVC': 5,
+    'AVC': None,
     'Q': None,
-    'P': 7.0,
+    'P': None,
     'ATC': None,
-    'TR': 45,
+    'TR': None,
     'PR': None,
     'AR': None,
     'QCR': None
 }
 
-print(round_array(vd))
+tl = []
+for i in range(31):
+    tl.append(i)
+tl.insert(0, None)
+
+print(tl)
+
+def test():
+    pass

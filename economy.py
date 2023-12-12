@@ -40,7 +40,7 @@ def findA(vd):
             if vl[i] == 'PR':
                 vd2[vl[i]] = fPR(vd)
             if vl[i] == 'AR':
-                vd2[vl[i]] = fAR(vd)
+                vd2[vl[i]] = fP(vd)
             if vl[i] == 'QCR':
                 vd2[vl[i]] = fQCR(vd)
         if vd != vd2:
@@ -242,6 +242,7 @@ def fPR(vd):
 # AR = TR / Q
 # AR = (FC / QCR) + AVC
 # AR = (PR / Q) + ATC
+# Вместо этой функции используется fP() т.к. AR = P
 def fAR(vd):
     if vd['AR']!= None:
         return vd['AR']

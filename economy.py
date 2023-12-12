@@ -47,6 +47,10 @@ def findA(vd):
             vd = vd2
             continue
         else:
+            if (vd2['P'] != None) and (vd2['AR'] == None):
+                vd2['AR'] = vd2['P']
+            elif (vd2['AR'] != None) and (vd2['P'] == None):
+                vd2['P'] = vd2['AR']
             return round_array(vd2)
 
 def round_array(vd):
@@ -265,6 +269,6 @@ def fQCR(vd):
     if vd['QCR']!= None:
         return vd['QCR']
     elif None not in [vd['FC'], vd['P'], vd['AVC']]:
-        return (vd['FC'] / (vd['P'] - vd['AVC']))
+        return vd['FC'] / (vd['P'] - vd['AVC'])
     else:
         return None

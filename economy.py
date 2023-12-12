@@ -53,7 +53,10 @@ def round_array(vd):
     vd2 = vd
     for i in vd:
         if vd[i] != None:
-            vd2[i] = round(vd[i], 2)
+            if vd[i] % 1 == 0:
+                vd2[i] = int(vd[i])
+            else:
+                vd2[i] = round(vd[i], 2)
         else:
             vd2[i] = vd[i]
     return vd2

@@ -23,7 +23,7 @@ window = Tk()
 window.title('Рассчёты')
 window.geometry('640x360')
 window.minsize(640,360)
-window.maxsize(1280,720)
+window.maxsize(990,410)
 
 
 def Cliсked():
